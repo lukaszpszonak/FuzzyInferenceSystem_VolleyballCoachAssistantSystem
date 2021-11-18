@@ -1,0 +1,96 @@
+[System]
+Name='VolleyballFIS'
+Type='mamdani'
+Version=2.0
+NumInputs=4
+NumOutputs=1
+NumRules=42
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='Agility'
+Range=[0 100]
+NumMFs=3
+MF1='Low':'trimf',[0 0 45]
+MF2='Mediocre':'trimf',[20 50 80]
+MF3='High':'trimf',[60 100 100]
+
+[Input2]
+Name='Reception'
+Range=[0 100]
+NumMFs=3
+MF1='Poor':'trapmf',[0 0 0 35]
+MF2='Average':'trapmf',[15 45 65 75]
+MF3='Good':'trapmf',[65 80 100 100]
+
+[Input3]
+Name='Attack_power'
+Range=[0 100]
+NumMFs=3
+MF1='Weak':'trimf',[0 0 45]
+MF2='Decent':'trimf',[20 55 90]
+MF3='Powerful':'trimf',[75 100 100]
+
+[Input4]
+Name='Attack_accuracy'
+Range=[0 100]
+NumMFs=3
+MF1='Low':'gaussmf',[15 0]
+MF2='Mediocre':'gaussmf',[17.7 50.21]
+MF3='High':'gaussmf',[17.71 100]
+
+[Output1]
+Name='How_good_of_a_volleyball_player_one_can_be'
+Range=[0 100]
+NumMFs=3
+MF1='Bad':'gbellmf',[25 3 4]
+MF2='Decent':'gbellmf',[20 2.5 54.4]
+MF3='Excellent':'gbellmf',[20 2.5 93.8689217758985]
+
+[Rules]
+1 1 1 1, 1 (1) : 1
+2 1 1 1, 1 (1) : 1
+3 1 1 1, 1 (1) : 1
+1 2 1 1, 1 (1) : 1
+1 3 1 1, 1 (1) : 1
+1 1 2 1, 1 (1) : 1
+1 1 3 1, 1 (1) : 1
+1 1 1 2, 1 (1) : 1
+1 1 1 3, 1 (1) : 1
+2 2 1 1, 1 (1) : 1
+3 2 1 1, 2 (1) : 1
+2 3 1 1, 2 (1) : 1
+3 3 1 1, 2 (1) : 1
+1 2 2 1, 1 (1) : 1
+1 3 2 1, 2 (1) : 1
+1 2 3 1, 2 (1) : 1
+1 1 2 2, 1 (1) : 1
+1 1 3 2, 2 (1) : 1
+1 1 2 3, 2 (1) : 1
+1 1 3 3, 2 (1) : 1
+2 1 1 2, 1 (1) : 1
+3 1 1 2, 2 (1) : 1
+2 1 1 3, 2 (1) : 1
+3 1 1 3, 2 (1) : 1
+2 1 2 1, 2 (1) : 1
+3 1 2 1, 2 (1) : 1
+2 1 3 1, 2 (1) : 1
+3 1 3 1, 2 (1) : 1
+1 2 1 2, 1 (1) : 1
+1 3 1 2, 2 (1) : 1
+1 2 1 3, 2 (1) : 1
+1 3 1 3, 2 (1) : 1
+2 2 2 2, 2 (1) : 1
+3 3 3 1, 2 (1) : 1
+3 3 3 2, 3 (1) : 1
+3 3 3 3, 3 (1) : 1
+3 3 1 3, 2 (1) : 1
+3 3 2 3, 3 (1) : 1
+3 1 3 3, 2 (1) : 1
+3 2 3 3, 3 (1) : 1
+1 3 3 3, 2 (1) : 1
+2 3 3 3, 3 (1) : 1
